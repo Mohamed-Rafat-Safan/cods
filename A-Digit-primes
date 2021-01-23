@@ -1,0 +1,35 @@
+#include <iostream>
+ 
+using namespace std;
+ 
+int main()
+{
+    int t ;    cin>>t;
+    for(int i=1 ; i<=t ; i++)
+    {
+        long long n ;    cin>>n;
+        long long digit ;
+        int count =0 ;
+        while(n !=0)
+        {
+            bool flag=true ;
+            digit = n%10 ;
+            if(digit>=2)
+            {
+                for(int j=2 ; j<digit ; j++)
+                {
+                    if(digit%j ==0)
+                        flag=false ;
+                }
+                if(flag==true)
+                {
+                    count++;
+                }
+            }
+ 
+            n = n/10 ;
+        }
+        cout<<count<<endl;
+    }
+    return 0;
+}
